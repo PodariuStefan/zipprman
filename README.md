@@ -3,8 +3,14 @@ A lightweight application that compresses and decompresses files and archives.
 ---
 ## Problem
 Simplyfing the binary representation of the file/directory so that its easier to transport over internet and implementing a simple UI.
+---
 ## Used technologies
 Implementing a simple Huffman Algorithm in C, and GTK is used for the user interface
+---
+## Functionality
+- simple browse feature of local files
+- simple UI
+- compression/decompression of files of all formats and folders
 ### Roadmap
 # 1-2 Week
 - [] Reaserching all used algorithms and methods to implement compression/decompression on all file formats
