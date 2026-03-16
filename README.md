@@ -15,7 +15,7 @@ Simplyfing the binary representation of the file/directory using the Huffman enc
 ### Roadmap
 # 1-2 Week
 - [] Reaserching all used algorithms and methods to implement compression/decompression on all file formats
-- [] Researching how to implement the a user interface and a C linker with MAKE files
+- [] Researching how to implement the a user interface and a C++ linker with MAKE files
 # 3-4 Week
 - [] Implementing the UI
 - [] Linking the GUI with a tester algorithm using CMake
