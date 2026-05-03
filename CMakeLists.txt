@@ -8,4 +8,6 @@ add_executable(zipprman main.cpp
         Leaf.cpp
         Tree.h
         Tree.cpp
+        TreeNode.h
+        TreeNode.cpp
 )

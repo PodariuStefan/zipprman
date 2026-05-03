@@ -1,11 +1,16 @@
 #include "Leaf.h"
+#include <iostream>
 
 Leaf::Leaf() {
-    value = 0;
-    pred = nullptr;
+    letter = 0;
+    frequency = 0;
 }
 
-Leaf::Leaf(int sum_value, Leaf* pred_leaf) {
-    value = sum_value;
-    pred = pred_leaf;
+Leaf::Leaf(const char& letter, const int& frequency) {
+    this->letter = letter;
+    this->frequency = frequency;
+}
+
+void Leaf::showLeaf() {
+    std::cout << "{" << this->letter << ", " << this->frequency << "}" << std::endl;
 }

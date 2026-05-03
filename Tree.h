@@ -11,8 +11,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
-#include "Leaf.h"
-#include <algorithm>
+#include "TreeNode.h"
 
 /* DATA STRUCTURE USED FOR REPRESENTING A LETTER AND ITS FREQUENCY */
 
@@ -28,10 +27,10 @@ public:
         ;
     }
 
-    value& operator [](key& target) {
+    std::pair<key, value>& operator [](key& target) {
         int pos = search(target);
         if (pos != this->find_len()) {
-            return *(&(this->entry[pos].second));
+            return this->entry[pos];
         } else {
             throw std::out_of_range("Target not found");
         }
@@ -124,11 +123,11 @@ public:
 
     int search(key &target) {
         int index = 0;
-        std::vector<std::pair<key, value>> current_keys;
+        //std::vector<std::pair<key, value>> current_keys;
+        // for (std::pair<key, value> pair: entry) {
+        //     current_keys.push_back(pair);
+        // }
         for (std::pair<key, value> pair: entry) {
-            current_keys.push_back(pair);
-        }
-        for (std::pair<key, value> pair: current_keys) {
             if (target == pair.first) {
                 return index;
             }
@@ -136,15 +135,37 @@ public:
         }
         return this->find_len();
     }
+
+    std::pair<key, value>* extract_leaf(key &target) {
+        int pos = search(target);
+        auto* found_pair = new std::pair<key, value>();
+        if (pos != this->find_len()) {
+            *found_pair = *(this->entry[pos]);
+            entry.erase(entry.begin(), pos);
+        } else {
+            free(found_pair);
+            found_pair = nullptr;
+            throw std::out_of_range("Target not found");
+        }
+        return found_pair;
+    }
+
+    void find_lowest_pairs () {
+
+    }
+
+    friend class Tree;
 };
 
 class Tree {
-    Leaf* root;
+    TreeNode* root;
 public:
     Vocabulary<char, int>* find_alphabet(const std::string&);
-    /* vector containing key, value pairs where key is alphabet and key
+    /* vector containing key, value pairs where key is letter and key
      * is frequency */
     Tree(const std::string&);
+    int lowest_node(std::vector<TreeNode>&);
+    TreeNode* extract_node(std::vector<TreeNode>&, int);
 };
 
 
