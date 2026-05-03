@@ -2,11 +2,15 @@
 #define ZIPPRMAN_LEAF_H
 
 class Leaf {
-    int value;
-    Leaf* pred;
+    char letter;
+    int frequency;
 public:
-    Leaf(int, Leaf*);
+    Leaf(const char&, const int&);
     Leaf();
+    void showLeaf();
+
+    friend class Tree;
+    friend class TreeNode;
 };
 
 #endif //ZIPPRMAN_LEAF_H
