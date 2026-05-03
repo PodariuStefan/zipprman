@@ -14,12 +14,12 @@ Simplyfing the binary representation of the file/directory using the Huffman enc
 - optional, multiple compressions happening at the same time using multi-threding
 ### Roadmap
 # 1-2 Week
-- [] Reaserching all used algorithms and methods to implement compression/decompression on all file formats
+- [x] Reaserching all used algorithms and methods to implement compression/decompression on all file formats
 - [] Researching how to implement the a user interface and a C++ linker with MAKE files
 # 3-4 Week
 - [] Implementing the UI
 - [] Linking the GUI with a tester algorithm using CMake
 # 5-6 Week
-- [] Implementing the compression algorithm for all file types
+- [x] Implementing the compression algorithm for all file types
 # 7-8 Week
 - [] Testing and presentation
