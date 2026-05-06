@@ -12,6 +12,7 @@
 #include <sstream>
 #include <fstream>
 #include "TreeNode.h"
+#include <unordered_map>
 
 /* DATA STRUCTURE USED FOR REPRESENTING A LETTER AND ITS FREQUENCY */
 
@@ -150,22 +151,21 @@ public:
         return found_pair;
     }
 
-    void find_lowest_pairs () {
-
-    }
-
     friend class Tree;
 };
 
 class Tree {
     TreeNode* root;
 public:
-    Vocabulary<char, int>* find_alphabet(const std::string&);
+
+    Vocabulary<char, int>* find_alphabet(const std::vector<char>&);
     /* vector containing key, value pairs where key is letter and key
      * is frequency */
     Tree(const std::string&);
     int lowest_node(std::vector<TreeNode>&);
     TreeNode* extract_node(std::vector<TreeNode>&, int);
+    static void dfs(TreeNode*, std::string&, std::unordered_map<unsigned char, std::string>&); // 0 -> left, 1 -> right
+    TreeNode* getRoot();
 };
 
 

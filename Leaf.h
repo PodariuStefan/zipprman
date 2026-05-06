@@ -2,7 +2,7 @@
 #define ZIPPRMAN_LEAF_H
 
 class Leaf {
-    char letter;
+    char symbol;
     int frequency;
 public:
     Leaf(const char&, const int&);
